@@ -1,0 +1,12 @@
+Package: FcisCourseraFormCleaner
+Type: Package
+Title: Cleans & Visualizes a certain google form.
+Version: 0.1.0
+Author: Muhammad Nossier, Muhammad Ezzat
+Maintainer: Muhammad Ezzat <muhammadezzat316@gmail.com>
+Description: Cleans & Visualizes a certain google form.
+License: GPL
+Imports: dplyr, tidyr, ggplot2, ggthemes, lubridate, rlist, xlsx, readxl
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.0.2
