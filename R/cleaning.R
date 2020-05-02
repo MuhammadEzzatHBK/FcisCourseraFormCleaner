@@ -50,8 +50,8 @@ split_malicious <- function(data){
 #' data_list <- split_malicious(raw_data) %>% general_department_split()
 #'}
 general_department_split <- function(data_Vector){
-  Departments <- dplyr::filter(data_Vector$Malicious_Not,data_Vector$Malicious_Not$Department != 'Main Stream [General] - 1st : 3rd Year'	)
-  Mainstream <- dplyr::filter(data_Vector$Malicious_Not,data_Vector$Malicious_Not$Department == 'Main Stream [General] - 1st : 3rd Year')
+  Departments <- dplyr::filter(data_Vector$Malicious_Not,data_Vector$Malicious_Not$Department != 'General_1st_to_3rd_Year'	)
+  Mainstream <- dplyr::filter(data_Vector$Malicious_Not,data_Vector$Malicious_Not$Department == 'General_1st_to_3rd_Year')
   data_Vector <- rlist::list.remove(data_Vector,4)
   data_Vector <- append(list(Departments,Mainstream),data_Vector)
   names(data_Vector)[1:2] <- c('Departments','Mainstream')
@@ -210,6 +210,6 @@ pipeline <- function(path){
 #'@importFrom readxl read_xlsx
 read_data <- function(path){
   raw_data <- readxl::read_xlsx(path)
-  names(raw_data) <- c('Timestamp','Email','Academic_Email','Name','Department','Year')
+  names(raw_data) <- c('Timestamp','Email','Academic_Email','Name','Gender','Department','Year')
   return(raw_data)
 }
