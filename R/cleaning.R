@@ -211,5 +211,6 @@ pipeline <- function(path){
 read_data <- function(path){
   raw_data <- readxl::read_xlsx(path)
   names(raw_data) <- c('Timestamp','Email','Academic_Email','Name','Gender','Department','Year')
+  raw_data[['Year']] <- as.factor(raw_data[['Year']])
   return(raw_data)
 }
