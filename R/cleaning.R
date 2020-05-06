@@ -140,7 +140,7 @@ department_distribute <- function(data_vector){
   len <- length(sublist)
   toremove <- vector()
   i<-1
-  while(i <= 29){
+  while(i <= len){
     if( nrow(sublist[[i]]) > 25 ){
       toremove <- append(toremove,i)
       n <- 25
